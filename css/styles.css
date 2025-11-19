@@ -1,6 +1,4 @@
-/* =========================
-   CSS perso pour le portfolio
-   ========================= */
+/* Taieb Jemni A00243679 css */
 
 /* Smooth scroll pour la navigation */
 html {
@@ -13,13 +11,13 @@ html {
 
 /* Espace sous la navbar fixe */
 .spacer-navbar {
-    height: 70px; /* adapte si nécessaire */
+    height: 70px; 
 }
 
 /* Personnalisation globale */
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    padding-top: 4rem; /* using rem, not pixels */
+    padding-top: 4rem; 
 
 }
 /* Titres de sections */
@@ -29,18 +27,18 @@ section h2 {
     letter-spacing: 0.08em;
 }
 .skills-scroll {
-    max-height: 400px; /* adjust to the height you want */
+    max-height: 400px; 
     overflow-y: auto;
-    padding-right: 10px; /* avoids scrollbar overlap */
+    padding-right: 10px; 
 }
 
 
-/* Légère ombre sur les cartes */
+
 .card,
 .alert {
     border-radius: 0.75rem;
 }
-/* Limiter la hauteur de la photo de profil */
+
 /* Photo de profil ronde */
 .profile-photo {
     width: 12rem;     /* taille parfaite */
@@ -48,7 +46,7 @@ section h2 {
     object-fit: cover;
     object-position: center;
 }
-/* ==== Scroll reveal animations ==== */
+/* Scroll reveal animations  */
 .reveal-left,
 .reveal-right {
     opacity: 0;
@@ -75,19 +73,11 @@ section h2 {
 /* Carte profil plus élégante */
 .profile-card {
     border-radius: 1rem;
-    max-width: 22rem;  /* empêche de devenir trop large */
+    max-width: 22rem;  
     background: white;
 }
 
-/* Couleurs personnalisées possibles (exemple) */
-/*
-.navbar-dark.bg-dark {
-    background: linear-gradient(90deg, #0d6efd, #6610f2);
-}
-*/
-
-/* COMMENTAIRE CSS : Ajoute ici d'autres styles pour personnaliser ton site */
-/* ===== Hidden pawn easter egg ===== */
+/* Hidden pawn easter egg  */
 
 .hidden-pawn {
     position: fixed;
@@ -120,7 +110,7 @@ section h2 {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.6);
-    display: none;              /* hidden by default */
+    display: none;             
     align-items: center;
     justify-content: center;
     z-index: 1200;
@@ -148,16 +138,62 @@ section h2 {
 /* Responsive carousel container */
 #projetsCarousel {
     width: 100%;
-    max-width: 50rem;   /* ≈ 800px but responsive and scalable */
+    max-width: 50rem;   
     margin: 0 auto;
     border-radius: 1rem;
     overflow: hidden;
 }
 
-/* All carousel images same aspect ratio, fully responsive */
+/* All carousel images same aspect ratio */
 .carousel-img {
     width: 100%;
-    aspect-ratio: 16 / 9;  /* responsive image height without pixels */
-    object-fit: cover;     /* fills the space naturally */
+    aspect-ratio: 16 / 9;  
+    object-fit: cover;     
     display: block;
+}
+/* Checkmate overlay  */
+
+.checkmate-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1300;
+}
+
+.checkmate-overlay.show {
+    display: flex;
+}
+
+.checkmate-box {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+    width: min(90%, 26rem);
+}
+
+.checkmate-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    animation: checkmate-pop 0.9s ease-out forwards;
+}
+
+
+@keyframes checkmate-pop {
+    0% {
+        transform: scale(0.4) translateY(-0.5rem);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.1) translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
 }

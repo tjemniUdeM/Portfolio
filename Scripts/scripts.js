@@ -1,24 +1,28 @@
+// Taieb Jemni A00243679
 document.addEventListener("DOMContentLoaded", function () {
-    const elements = document.querySelectorAll('.reveal-left, .reveal-right');
+    // Scroll reveal 
+    const elements = document.querySelectorAll(".reveal-left, .reveal-right");
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('reveal-show');
-                observer.unobserve(entry.target); 
-            }
+    if (elements.length > 0 && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal-show");
+                    observerInstance.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
         });
-    }, {
-        threshold: 0.15
-    });
 
-    elements.forEach(el => observer.observe(el));
-     /* ===== Hidden pawn easter egg ===== */
+        elements.forEach(el => observer.observe(el));
+    }
 
-    const pawnButton = document.getElementById('hiddenPawn');
-    const pawnModal  = document.getElementById('pawnModal');
-    const pawnClose  = document.querySelector('.pawn-modal-close');
-    const pawnText   = document.getElementById('pawnModalText');
+    //  Hidden pawn easter egg 
+    const pawnButton = document.getElementById("hiddenPawn");
+    const pawnModal  = document.getElementById("pawnModal");
+    const pawnClose  = document.querySelector(".pawn-modal-close");
+    const pawnText   = document.getElementById("pawnModalText");
 
     const pawnMessages = [
         "You found the hidden pawn. It has now evolved into a queen.",
@@ -36,24 +40,57 @@ document.addEventListener("DOMContentLoaded", function () {
         if (pawnText) {
             pawnText.textContent = random;
         }
-        pawnModal.classList.add('show');
+        pawnModal.classList.add("show");
     }
 
     function closePawnModal() {
-        pawnModal?.classList.remove('show');
+        if (pawnModal) {
+            pawnModal.classList.remove("show");
+        }
     }
 
     if (pawnButton && pawnModal) {
-        pawnButton.addEventListener('click', openPawnModal);
+        pawnButton.addEventListener("click", openPawnModal);
     }
 
-    pawnClose?.addEventListener('click', closePawnModal);
+    if (pawnClose) {
+        pawnClose.addEventListener("click", closePawnModal);
+    }
 
-    // Close when clicking outside the box
-    pawnModal?.addEventListener('click', function (e) {
-        if (e.target === pawnModal) {
-            closePawnModal();
-        }
-    });
+    if (pawnModal) {
+        // Close when clicking outside the box
+        pawnModal.addEventListener("click", function (e) {
+            if (e.target === pawnModal) {
+                closePawnModal();
+            }
+        });
+    }
+
+    // Contact form: checkmate animation 
+    const contactForm = document.getElementById("contactForm");
+    const checkmateOverlay = document.getElementById("checkmateOverlay");
+
+    if (contactForm && checkmateOverlay) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // no real submit 
+
+
+            contactForm.reset();
+
+            // Show checkmate overlay
+            checkmateOverlay.classList.add("show");
+
+
+            setTimeout(function () {
+                window.location.href = "index.html#accueil";
+            }, 2000);
+        });
+
+
+        checkmateOverlay.addEventListener("click", function (e) {
+            if (e.target === checkmateOverlay) {
+                window.location.href = "index.html#accueil";
+            }
+        });
+    }
 });
-
