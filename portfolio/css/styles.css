@@ -1,0 +1,163 @@
+/* =========================
+   CSS perso pour le portfolio
+   ========================= */
+
+/* Smooth scroll pour la navigation */
+html {
+    scroll-behavior: smooth;
+}
+.logo-chess {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Espace sous la navbar fixe */
+.spacer-navbar {
+    height: 70px; /* adapte si nécessaire */
+}
+
+/* Personnalisation globale */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    padding-top: 4rem; /* using rem, not pixels */
+
+}
+/* Titres de sections */
+section h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.skills-scroll {
+    max-height: 400px; /* adjust to the height you want */
+    overflow-y: auto;
+    padding-right: 10px; /* avoids scrollbar overlap */
+}
+
+
+/* Légère ombre sur les cartes */
+.card,
+.alert {
+    border-radius: 0.75rem;
+}
+/* Limiter la hauteur de la photo de profil */
+/* Photo de profil ronde */
+.profile-photo {
+    width: 12rem;     /* taille parfaite */
+    height: 12rem;
+    object-fit: cover;
+    object-position: center;
+}
+/* ==== Scroll reveal animations ==== */
+.reveal-left,
+.reveal-right {
+    opacity: 0;
+    transform: translateX(0);          /* default, will be overridden below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* start positions */
+.reveal-left {
+    transform: translateX(-60px);      /* comes from the left */
+}
+
+.reveal-right {
+    transform: translateX(60px);       /* comes from the right */
+}
+
+/* when visible */
+.reveal-show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Carte profil plus élégante */
+.profile-card {
+    border-radius: 1rem;
+    max-width: 22rem;  /* empêche de devenir trop large */
+    background: white;
+}
+
+/* Couleurs personnalisées possibles (exemple) */
+/*
+.navbar-dark.bg-dark {
+    background: linear-gradient(90deg, #0d6efd, #6610f2);
+}
+*/
+
+/* COMMENTAIRE CSS : Ajoute ici d'autres styles pour personnaliser ton site */
+/* ===== Hidden pawn easter egg ===== */
+
+.hidden-pawn {
+    position: fixed;
+    bottom: 14px;
+    right: 18px;
+    font-size: 24px;
+    opacity: 0.15;
+    cursor: pointer;
+    z-index: 1100;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    user-select: none;
+}
+
+.hidden-pawn:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 576px) {
+    .hidden-pawn {
+        bottom: 10px;
+        right: 12px;
+        font-size: 20px;
+    }
+}
+
+/* Overlay for pawn modal */
+
+.pawn-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;              /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+}
+
+.pawn-modal-overlay.show {
+    display: flex;
+}
+
+.pawn-modal-box {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.25rem 1.5rem;
+    max-width: 360px;
+    width: 90%;
+    position: relative;
+    text-align: center;
+}
+
+.pawn-modal-close {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.35rem;
+}
+/* Responsive carousel container */
+#projetsCarousel {
+    width: 100%;
+    max-width: 50rem;   /* ≈ 800px but responsive and scalable */
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+/* All carousel images same aspect ratio, fully responsive */
+.carousel-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;  /* responsive image height without pixels */
+    object-fit: cover;     /* fills the space naturally */
+    display: block;
+}

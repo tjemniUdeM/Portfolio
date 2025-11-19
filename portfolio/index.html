@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Taieb Jemni</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70" tabindex="0">
+    <!-- Navbar Bootstrap avec liens vers les sections -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="logo-chess me-2">♞</span>
+                <span class="fw-bold">TJ</span> | Taieb Jemni
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Menu navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Liens du menu -->
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#accueil">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projets">Projets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#competences">Compétences</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#realisations">Réalisations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pour laisser de la place sous la navbar fixe -->
+    <div class="spacer-navbar"></div>
+
+    <!-- ACCUEIL -->
+    <section id="accueil" class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center reveal-left">
+                <!-- Colonne texte -->
+                <div class="col-md-7 mb-4 mb-md-0 ">
+                    <div class="p-4 p-lg-5 bg-white rounded-3 shadow-sm">
+                        <!-- Section introduction / biographie -->
+                        <h1 class="display-5 fw-bold mb-3">Salut, moi c'est Taieb</h1>
+                        <p class="lead">
+                            Je suis étudiant à l’Université de Moncton et je termine actuellement ma dernière année d’études. 
+                            Passionné par le développement web et l’informatique, je m’intéresse particulièrement à la création 
+                            d’interfaces modernes, réactives et conviviales. 
+                        </p>
+                        <p>
+                            Mon objectif est de mettre en pratique mes compétences techniques à travers des projets concrets et
+                            de poursuivre ma carrière dans le domaine des technologies de l’information.
+                        </p>
+                        <a href="#projets" class="btn btn-primary btn-lg mt-2">Voir mes projets</a>
+                    </div>
+                </div>
+
+                <!-- photo de profil -->
+                <div class="col-md-5 d-flex justify-content-center ">
+                    <div class="card shadow-sm text-center p-4 profile-card">
+                        <img src="image/Taieb.jpg" alt="Photo de profil" class="rounded-circle profile-photo mx-auto mb-3">
+                        <h5 class="card-title mb-1">Taieb Jemni</h5>
+                        <p class="text-muted">Étudiant en informatique • Développeur web junior</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJETS -->
+    <section id="projets" class="py-5 reveal-right">
+        <div class="container">
+            <h2 class="mb-4 text-center">Projets</h2>
+            <p class="text-center text-muted mb-5">
+                Voici quelques projets que j'ai réalisés en programmation et développement.
+            </p>
+            <div class="row g-4">
+                <!-- Projet 1 (poisson)-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/projet_Poisson.jpg" class="card-img-top"
+                            alt="Projet Deep Learning Poissons">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Classification de poissons avec Deep Learning</h5>
+
+                            <p class="card-text flex-grow-1">
+                                Projet de deep learning visant à distinguer deux espèces de poissons :
+                                <strong>Fundulus heteroclitus</strong> et <strong>Fundulus diaphanus</strong>.
+                                J’ai créé entièrement le dataset moi-même (collecte, nettoyage et annotation),
+                                puis entraîné un modèle de classification d’images avec 
+                                <strong>Python</strong>, <strong>Keras</strong> et <strong>TensorFlow</strong>.
+                                Le modèle atteint une précision élevée et démontre ma capacité à gérer 
+                                un pipeline complet d’apprentissage profond.
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="badge bg-primary">Python</span>
+                                <span class="badge bg-primary">TensorFlow</span>
+                                <span class="badge bg-primary">Keras</span>
+                                <span class="badge bg-success">Deep Learning</span>
+                                <span class="badge bg-secondary">Dataset personnalisé</span>
+                            </div>
+
+                            <!-- Mon Rapport de projet pdf -->
+                            <a href="files/RapportDuProjet.pdf" target="_blank" class="btn btn-outline-primary mt-auto">
+                            Voir le rapport PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Projet 2 (LandingPage)-->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/projet_web.jpg" class="card-img-top"
+                            alt="Projet landing page école de langues">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Landing page pour une école de langues</h5>
+
+                            <p class="card-text flex-grow-1">
+                                Création d’une landing page moderne et attrayante pour une école de langues.
+                                Le site a été conçu entièrement à l’aide de <strong>HTML</strong> et
+                                <strong>CSS</strong> sans framework, avec une attention particulière portée
+                                à la mise en page, au design visuel et à l'expérience utilisateur.
+                                Le projet inclut une présentation claire des programmes, des avantages,
+                                un appel à l’action ainsi qu’une section de contact.
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="badge bg-primary">HTML</span>
+                                <span class="badge bg-primary">CSS</span>
+                                <span class="badge bg-success">Responsive design</span>
+                                <span class="badge bg-secondary">UX / UI</span>
+                            </div>
+
+                            <!-- La landing page du site -->
+                            <a href="https://wanderlustilc.com/index.html" target="_blank" class="btn btn-outline-primary mt-auto">
+                                Voir la landing page
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Projet 3 : unity (3D) -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="image/projet_Unity.png" class="card-img-top"
+                            alt="Projet 3D Unity - Chambre réaliste">
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Scène 3D réaliste dans Unity</h5>
+
+                            <p class="card-text flex-grow-1">
+                                Création d’une chambre 3D réaliste dans <strong>Unity</strong>, avec une gestion avancée
+                                de la lumière, des ombres et de la gravité. J’ai utilisé <strong>C#</strong> pour
+                                programmer les comportements (physique, mouvements, interactions) et produire une
+                                vidéo de présentation de la scène. Le projet met l’accent sur le réalisme visuel,
+                                l’éclairage et la compréhension du moteur physique 3D.
+                            </p>
+
+                            <div class="mb-3">
+                                <span class="badge bg-primary">C#</span>
+                                <span class="badge bg-primary">Unity</span>
+                                <span class="badge bg-success">3D</span>
+                                <span class="badge bg-success">Physique & gravité</span>
+                                <span class="badge bg-secondary">Éclairage réaliste</span>
+                            </div>
+
+                            <!-- J ai pas une viedo presentement mais j ai laisser le button pour des raison esthetique -->
+                            <a href="#" target="_blank" class="btn btn-outline-primary mt-auto">
+                                Voir la vidéo / démo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                      <!--  Galerie de projets  -->
+            <div class="d-flex justify-content-center">
+                <div id="projetsCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <!-- Indicateurs -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="4"
+                                aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="5"
+                                aria-label="Slide 6"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="6"
+                                aria-label="Slide 7"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="7"
+                                aria-label="Slide 8"></button>
+                        <button type="button" data-bs-target="#projetsCarousel" data-bs-slide-to="8"
+                                aria-label="Slide 9"></button>
+                    </div>
+
+                    <!-- Images -->
+                    <div class="carousel-inner">
+
+                        <!-- 1–4 : Projet Poissons -->
+                        <div class="carousel-item active">
+                            <img src="image/carassol/prediction0.png" class="carousel-img"
+                                alt="Classification de poissons avec Deep Learning - image 1">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Classification de poissons</h5>
+                                <p>Deep learning avec TensorFlow, Keras et dataset personnalisé.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/prediction1.png" class="carousel-img"
+                                alt="Classification de poissons avec Deep Learning - image 2">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Classification de poissons</h5>
+                                <p>Deep learning avec TensorFlow, Keras et dataset personnalisé.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/prediction2.png" class="carousel-img"
+                                alt="Classification de poissons avec Deep Learning - image 3">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Classification de poissons</h5>
+                                <p>Deep learning avec TensorFlow, Keras et dataset personnalisé.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/prediction3.png" class="carousel-img"
+                                alt="Classification de poissons avec Deep Learning - image 4">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Classification de poissons</h5>
+                                <p>Deep learning avec TensorFlow, Keras et dataset personnalisé.</p>
+                            </div>
+                        </div>
+
+                        <!-- 5–7 : Landing Page -->
+                        <div class="carousel-item">
+                            <img src="image/carassol/web1.jpg" class="carousel-img"
+                                alt="Landing page pour école de langues - image 1">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Landing page école de langues</h5>
+                                <p>Design responsive en HTML et CSS, orienté UX/UI.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/web2.jpg" class="carousel-img"
+                                alt="Landing page pour école de langues - image 2">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Landing page école de langues</h5>
+                                <p>Design responsive en HTML et CSS, orienté UX/UI.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/web3.jpg" class="carousel-img"
+                                alt="Landing page pour école de langues - image 3">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Landing page école de langues</h5>
+                                <p>Design responsive en HTML et CSS, orienté UX/UI.</p>
+                            </div>
+                        </div>
+
+                        <!-- 8–9 : Unity 3D -->
+                        <div class="carousel-item">
+                            <img src="image/carassol/unity1.jpg" class="carousel-img"
+                                alt="Scène 3D réaliste Unity - image 1">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Scène 3D réaliste</h5>
+                                <p>Projet Unity avec C#, physique 3D et éclairage avancé.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="image/carassol/unity2.jpg" class="carousel-img"
+                                alt="Scène 3D réaliste Unity - image 2">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded-3 p-2">
+                                <h5>Scène 3D réaliste</h5>
+                                <p>Projet Unity avec C#, physique 3D et éclairage avancé.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contrôles -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#projetsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Précédent</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#projetsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Suivant</span>
+                    </button>
+
+                </div>
+            </div>
+            <!--Fin du Carousel-->
+        </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="py-5 bg-light reveal-left">
+        <div class="container">
+            <h2 class="mb-4 text-center">Compétences</h2>
+
+            <div class="row g-4">
+                <!-- Compétences techniques (badges) -->
+                <div class="col-md-6">
+                    <h4>Langages & Outils</h4>
+                    <p>
+                        <!-- Bootstrap Badge components -->
+                        <span class="badge bg-secondary mb-1">HTML5</span>
+                        <span class="badge bg-secondary mb-1">CSS</span>
+                        <span class="badge bg-secondary mb-1">Bootstrap</span>
+                        <span class="badge bg-secondary mb-1">JavaScript</span>
+                        <span class="badge bg-secondary mb-1">Python</span>
+                        <span class="badge bg-secondary mb-1">Java</span>
+                        <span class="badge bg-secondary mb-1">C++</span>
+                        <span class="badge bg-secondary mb-1">C#</span>
+                        <span class="badge bg-secondary mb-1">Unity</span>
+                        <span class="badge bg-secondary mb-1">SQL</span>
+                    </p>
+                </div>
+
+                <!-- Compétences avec niveaux (Progress bar) -->
+                <div class="col-md-6">
+                    <h4>Niveaux de maîtrise</h4>
+                    <div class="skills-scroll">
+                        <!-- barre de progression Bootstrap -->
+                        <div class="mb-3">
+                            <label class="form-label">HTML / CSS</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Bootstrap</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70"
+                                    aria-valuemin="0" aria-valuemax="100">70%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">JavaScript</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50"
+                                    aria-valuemin="0" aria-valuemax="100">50%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Python</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85"
+                                    aria-valuemin="0" aria-valuemax="100">85%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Java</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90"
+                                    aria-valuemin="0" aria-valuemax="100">90%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">C++</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">C#</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                                    aria-valuemin="0" aria-valuemax="100">60%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Unity</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="60"
+                                    aria-valuemin="0" aria-valuemax="100">60%</div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">SQL</label>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80"
+                                    aria-valuemin="0" aria-valuemax="100">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- RÉALISATIONS / RÉCOMPENSES -->
+    <section id="realisations" class="py-5 reveal-right">
+        <div class="container">
+            <h2 class="mb-4 text-center">Réalisations & Récompenses</h2>
+
+            <div class="row g-4">
+                <!-- Exemple avec Alert -->
+                <div class="col-md-6">
+                    <!-- composant Alert -->
+                    <div class="alert alert-success shadow-sm" role="alert">
+                        <h4 class="alert-heading">Certification HTML & CSS</h4>
+                        <p>
+                            Obtention d'une certification en développement web de base (HTML/CSS) sur une plateforme en ligne.
+                        </p>
+                        <hr>
+                        <p class="mb-0">Année : 2024</p>
+                    </div>
+                </div>
+
+                <!-- Exemple avec Card -->
+                <div class="col-md-6">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title">Projet de fin de session</h4>
+                            <p class="card-text">
+                                Développement d’une application web permettant aux clients de passer des commandes facilement, incluant la gestion du menu,
+                                le panier, les options de paiement et l’interface du personnel pour recevoir et traiter les commandes.
+                            </p>
+                            <p class="card-text">
+                                <small class="text-muted">Note obtenue : 95 %</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden pawn easter egg -->
+    <div id="hiddenPawn" class="hidden-pawn" title="Secret chess mode">
+        ♟
+    </div>
+
+    <!-- Pawn joke modal -->
+    <div id="pawnModal" class="pawn-modal-overlay">
+        <div class="pawn-modal-box shadow-lg">
+            <button type="button" class="btn-close pawn-modal-close" aria-label="Fermer"></button>
+
+            <h6 class="mb-2">Easter egg trouvé !</h6>
+            <p id="pawnModalText" class="mb-0">
+                You found the hidden pawn. It has now evolved into a queen.
+            </p>
+        </div>
+    </div>
+
+    <!--  FOOTER -->
+    <footer class="py-3 bg-dark text-light">
+        <div class="container text-center">
+            <small>© 2025 Taieb Jemni - Portfolio personnel. Tous droits réservés.</small><br>
+            <small class="text-muted">Toujours quelques coups d'avance ♟</small>
+        </div>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.esm.min.js"></script>
+    <script src="Scripts/scripts.js"></script>
+
+</body>
+</html>
