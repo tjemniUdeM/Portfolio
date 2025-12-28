@@ -182,9 +182,8 @@
                             </div>
 
                             <!-- J ai pas une viedo presentement mais j ai laisser le button pour des raison esthetique -->
-                            <a href="#" target="_blank" class="btn btn-outline-primary mt-auto">
-                                Voir la vidéo / démo
-                            </a>
+                            <a href="#" class="btn btn-outline-primary mt-auto" data-open-video>View video / demo</a>
+
                         </div>
                     </div>
                 </div>
@@ -486,10 +485,71 @@
         </div>
 
     </footer>
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal" aria-hidden="true">
+        <div class="video-modal__backdrop" data-close></div>
+
+        <div class="video-modal__content" role="dialog" aria-modal="true">
+            <button class="video-modal__close" data-close aria-label="Close">✕</button>
+
+            <video
+            id="videoPlayer"
+            controls
+            preload="metadata"
+            style="width:100%; border-radius:10px;"
+            >
+            <source src="videos/unity-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
 
     <!-- JS -->
     <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     <script src="bootstrap-5.3.8-dist/js/bootstrap.esm.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const modal = document.getElementById("videoModal");
+            const video = document.getElementById("videoPlayer");
+
+            // If modal/video isn't on the page, do nothing (prevents site break)
+            if (!modal || !video) return;
+
+            const openers = document.querySelectorAll("[data-open-video]");
+            const closers = modal.querySelectorAll("[data-close]");
+
+            function openVideo() {
+            modal.classList.add("is-open");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+            video.play().catch(() => {});
+            }
+
+            function closeVideo() {
+            modal.classList.remove("is-open");
+            modal.setAttribute("aria-hidden", "true");
+            video.pause();
+            video.currentTime = 0;
+            document.body.style.overflow = "";
+            }
+
+            openers.forEach(el => {
+            el.addEventListener("click", (e) => {
+                e.preventDefault(); // stops jump-to-top from href="#"
+                openVideo();
+            });
+            });
+
+            closers.forEach(el => el.addEventListener("click", closeVideo));
+
+            document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("is-open")) closeVideo();
+            });
+        });
+    </script>
+
+
     <script src="Scripts/scripts.js"></script>
 
 </body>

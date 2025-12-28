@@ -197,3 +197,38 @@ section h2 {
         opacity: 1;
     }
 }
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.video-modal.is-open {
+  display: block;
+}
+
+.video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.video-modal__content {
+  position: relative;
+  width: min(900px, 92vw);
+  margin: 8vh auto;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
